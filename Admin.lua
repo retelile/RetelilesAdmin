@@ -381,7 +381,7 @@ CommandBox.TextSize = 17.000
 
 -- Scripts:
 
-local function IIXCYMV_fake_script() -- Main.Dragify 
+local function ZBLBJ_fake_script() -- Main.Dragify 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
@@ -422,8 +422,8 @@ local function IIXCYMV_fake_script() -- Main.Dragify
 	dragify(script.Parent)
 	
 end
-coroutine.wrap(IIXCYMV_fake_script)()
-local function CXMVHVJ_fake_script() -- ImageLabel.LocalScript 
+coroutine.wrap(ZBLBJ_fake_script)()
+local function NMIOES_fake_script() -- ImageLabel.LocalScript 
 	local script = Instance.new('LocalScript', ImageLabel)
 
 	local TweenService = game:GetService("TweenService")
@@ -451,8 +451,8 @@ local function CXMVHVJ_fake_script() -- ImageLabel.LocalScript
 	end)
 	
 end
-coroutine.wrap(CXMVHVJ_fake_script)()
-local function IQPAEZ_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(NMIOES_fake_script)()
+local function HYKTZE_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local searchBox = script.Parent 
@@ -484,8 +484,8 @@ local function IQPAEZ_fake_script() -- CommandBox.LocalScript
 	end)
 	
 end
-coroutine.wrap(IQPAEZ_fake_script)()
-local function BWVJY_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(HYKTZE_fake_script)()
+local function HEUCFFY_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local Players = game:GetService("Players")
@@ -530,48 +530,58 @@ local function BWVJY_fake_script() -- CommandBox.LocalScript
 	        return nil
 	end
 	
-	local Players = game:GetService("Players")
-	local RunService = game:GetService("RunService")
-	
-	local localPlayer = Players.LocalPlayer
-	local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
-	local humanoid = character:WaitForChild("Humanoid")
-	
 	local banging = false
 	local currentTarget = nil
 	local animTrack = nil
+	local bangConnection = nil
 	
-	
-	
-	
-	
-	function bang(targetName)
-	        local targetPlayer = Players:FindFirstChild(targetName)
-	        if not targetPlayer or not targetPlayer.Character or not targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
-	                warn("Target not found")
+	function bang(targetPlayer)
+	        if banging then return end
+	        if not targetPlayer or not targetPlayer.Character then
+	                warn("Invalid target player for bang")
 	                return
 	        end
 	
-	        currentTarget = targetPlayer
+	        local targetHRP = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+	        local myHRP = character:FindFirstChild("HumanoidRootPart")
+	        if not targetHRP or not myHRP then
+	                warn("HumanoidRootPart missing on target or player")
+	                return
+	        end
+	
 	        banging = true
+	        currentTarget = targetPlayer
 	
 	        -- Load animation
-	        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+	        local animator = humanoid:FindFirstChildOfClass("Animator")
+	        if not animator then
+	                animator = Instance.new("Animator")
+	                animator.Parent = humanoid
+	        end
 	        local anim = Instance.new("Animation")
 	        anim.AnimationId = "rbxassetid://148831003"
 	        animTrack = animator:LoadAnimation(anim)
-	        animTrack:Play()
 	        animTrack.Looped = true
+	        animTrack:Play()
 	
-	        -- Loop teleport
-	        RunService.RenderStepped:Connect(function()
-	                if not banging or not currentTarget or not currentTarget.Character then return end
+	        -- Loop teleport behind target
+	        if bangConnection then
+	                bangConnection:Disconnect()
+	                bangConnection = nil
+	        end
+	        bangConnection = RunService.RenderStepped:Connect(function()
+	                if not banging or not currentTarget or not currentTarget.Character then
+	                        unbang()
+	                        return
+	                end
+	
 	                local targetHRP = currentTarget.Character:FindFirstChild("HumanoidRootPart")
 	                local myHRP = character:FindFirstChild("HumanoidRootPart")
 	                if targetHRP and myHRP then
-	                        -- Position behind target
-	                        local backPos = targetHRP.CFrame * CFrame.new(0, 0, 2)
-	                        myHRP.CFrame = CFrame.lookAt(backPos.Position, targetHRP.Position)
+	                        -- Position 2 studs behind the target, facing the target
+	                        local backOffset = CFrame.new(0, 0, 2)
+	                        local behindCFrame = targetHRP.CFrame * backOffset
+	                        myHRP.CFrame = CFrame.new(behindCFrame.Position, targetHRP.Position)
 	                end
 	        end)
 	end
@@ -579,11 +589,19 @@ local function BWVJY_fake_script() -- CommandBox.LocalScript
 	function unbang()
 	        banging = false
 	        currentTarget = nil
+	
 	        if animTrack then
 	                animTrack:Stop()
+	                animTrack:Destroy()
 	                animTrack = nil
 	        end
+	
+	        if bangConnection then
+	                bangConnection:Disconnect()
+	                bangConnection = nil
+	        end
 	end
+	
 	
 	
 	
@@ -1506,4 +1524,4 @@ local function BWVJY_fake_script() -- CommandBox.LocalScript
 	})
 	
 end
-coroutine.wrap(BWVJY_fake_script)()
+coroutine.wrap(HEUCFFY_fake_script)()

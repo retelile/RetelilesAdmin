@@ -1,18 +1,3 @@
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
-player.CharacterAdded:Connect(function(newChar)
-    local newHumanoid = newChar:WaitForChild("Humanoid")
-    local camera = workspace.CurrentCamera
-
-    -- Wait a short moment to ensure character fully loads
-    task.wait(0.1)
-
-    -- Reset camera to new character's Humanoid
-    camera.CameraSubject = newHumanoid
-    camera.CameraType = Enum.CameraType.Custom
-end)
-
 
 local RetelileUI = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -43,6 +28,8 @@ local unascend = Instance.new("TextButton")
 local UIListLayout = Instance.new("UIListLayout")
 local egor = Instance.new("TextButton")
 local unegor = Instance.new("TextButton")
+local bang = Instance.new("TextButton")
+local unbang = Instance.new("TextButton")
 local ImageLabel = Instance.new("ImageLabel")
 local CommandBox = Instance.new("TextBox")
 
@@ -349,6 +336,28 @@ unegor.Text = "!unegor"
 unegor.TextColor3 = Color3.fromRGB(218, 218, 218)
 unegor.TextSize = 14.000
 
+bang.Name = "bang"
+bang.Parent = ScrollMenu
+bang.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+bang.BorderColor3 = Color3.fromRGB(15, 15, 15)
+bang.Position = UDim2.new(0, 0, 0.965147436, 0)
+bang.Size = UDim2.new(0, 265, 0, 20)
+bang.Font = Enum.Font.SourceSansBold
+bang.Text = "!bang"
+bang.TextColor3 = Color3.fromRGB(218, 218, 218)
+bang.TextSize = 14.000
+
+unbang.Name = "unbang"
+unbang.Parent = ScrollMenu
+unbang.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+unbang.BorderColor3 = Color3.fromRGB(15, 15, 15)
+unbang.Position = UDim2.new(0, 0, 0.965147436, 0)
+unbang.Size = UDim2.new(0, 265, 0, 20)
+unbang.Font = Enum.Font.SourceSansBold
+unbang.Text = "!unbang"
+unbang.TextColor3 = Color3.fromRGB(218, 218, 218)
+unbang.TextSize = 14.000
+
 ImageLabel.Parent = Main
 ImageLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BackgroundTransparency = 1.000
@@ -372,7 +381,7 @@ CommandBox.TextSize = 17.000
 
 -- Scripts:
 
-local function QSSON_fake_script() -- Main.Dragify 
+local function IIXCYMV_fake_script() -- Main.Dragify 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
@@ -413,8 +422,8 @@ local function QSSON_fake_script() -- Main.Dragify
 	dragify(script.Parent)
 	
 end
-coroutine.wrap(QSSON_fake_script)()
-local function PNES_fake_script() -- ImageLabel.LocalScript 
+coroutine.wrap(IIXCYMV_fake_script)()
+local function CXMVHVJ_fake_script() -- ImageLabel.LocalScript 
 	local script = Instance.new('LocalScript', ImageLabel)
 
 	local TweenService = game:GetService("TweenService")
@@ -442,8 +451,8 @@ local function PNES_fake_script() -- ImageLabel.LocalScript
 	end)
 	
 end
-coroutine.wrap(PNES_fake_script)()
-local function OZXAXR_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(CXMVHVJ_fake_script)()
+local function IQPAEZ_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local searchBox = script.Parent 
@@ -475,8 +484,8 @@ local function OZXAXR_fake_script() -- CommandBox.LocalScript
 	end)
 	
 end
-coroutine.wrap(OZXAXR_fake_script)()
-local function LWFGV_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(IQPAEZ_fake_script)()
+local function BWVJY_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local Players = game:GetService("Players")
@@ -520,6 +529,66 @@ local function LWFGV_fake_script() -- CommandBox.LocalScript
 	        end
 	        return nil
 	end
+	
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	
+	local localPlayer = Players.LocalPlayer
+	local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	
+	local banging = false
+	local currentTarget = nil
+	local animTrack = nil
+	
+	
+	
+	
+	
+	function bang(targetName)
+	        local targetPlayer = Players:FindFirstChild(targetName)
+	        if not targetPlayer or not targetPlayer.Character or not targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+	                warn("Target not found")
+	                return
+	        end
+	
+	        currentTarget = targetPlayer
+	        banging = true
+	
+	        -- Load animation
+	        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+	        local anim = Instance.new("Animation")
+	        anim.AnimationId = "rbxassetid://148831003"
+	        animTrack = animator:LoadAnimation(anim)
+	        animTrack:Play()
+	        animTrack.Looped = true
+	
+	        -- Loop teleport
+	        RunService.RenderStepped:Connect(function()
+	                if not banging or not currentTarget or not currentTarget.Character then return end
+	                local targetHRP = currentTarget.Character:FindFirstChild("HumanoidRootPart")
+	                local myHRP = character:FindFirstChild("HumanoidRootPart")
+	                if targetHRP and myHRP then
+	                        -- Position behind target
+	                        local backPos = targetHRP.CFrame * CFrame.new(0, 0, 2)
+	                        myHRP.CFrame = CFrame.lookAt(backPos.Position, targetHRP.Position)
+	                end
+	        end)
+	end
+	
+	function unbang()
+	        banging = false
+	        currentTarget = nil
+	        if animTrack then
+	                animTrack:Stop()
+	                animTrack = nil
+	        end
+	end
+	
+	
+	
+	
+	
 	
 	-- Jerk Animation load/play/stop
 	
@@ -1188,6 +1257,32 @@ local function LWFGV_fake_script() -- CommandBox.LocalScript
 	end
 	
 	
+	local Players = game:GetService("Players")
+	local localPlayer = Players.LocalPlayer
+	local RunService = game:GetService("RunService")
+	
+	local function resetCameraOnRespawn(character)
+	        local humanoid = character:WaitForChild("Humanoid")
+	        local camera = workspace.CurrentCamera
+	
+	        -- Stop any camera overriding features before resetting camera
+	        stopFreecam()
+	        stopView()
+	
+	        task.spawn(function()
+	                local startTime = tick()
+	                while tick() - startTime < 1 do
+	                        camera.CameraSubject = humanoid
+	                        camera.CameraType = Enum.CameraType.Custom
+	                        RunService.RenderStepped:Wait()
+	                end
+	        end)
+	end
+	
+	localPlayer.CharacterAdded:Connect(resetCameraOnRespawn)
+	
+	
+	
 	-- COMMAND PROCESSING --
 	
 	local function processCommand(msg)
@@ -1330,10 +1425,26 @@ local function LWFGV_fake_script() -- CommandBox.LocalScript
 	        elseif cmd == "unegor" then
 	                unegor()
 	
+	        elseif cmd == "bang" then
+	                if not arg1 then
+	                        warn("Usage: !bang username")
+	                        return
+	                end
+	                local targetPlayer = findPlayerByName(arg1)
+	                if targetPlayer then
+	                        bang(targetPlayer)
+	                else
+	                        warn("Player not found: "..arg1)
+	                end
+	
+	        elseif cmd == "unbang" then
+	                unbang()
+	
 	        else
 	                warn("Unknown command: "..cmd)
 	        end
 	end
+	
 	
 	
 	local textBox = script.Parent
@@ -1350,23 +1461,33 @@ local function LWFGV_fake_script() -- CommandBox.LocalScript
 	        humanoid = character:WaitForChild("Humanoid")
 	        hrp = character:WaitForChild("HumanoidRootPart")
 	
-	        -- Reset camera to default follow mode on respawn
-	        local camera = workspace.CurrentCamera
-	        camera.CameraType = Enum.CameraType.Custom
-	        camera.CameraSubject = humanoid
+	        task.wait(0.1)
 	
-	        -- Stop all active features to clean up on respawn
+	        local camera = workspace.CurrentCamera
+	
+	        -- Stop modes that affect camera first
+	        stopFreecam()
+	
+	        -- Force camera reset multiple times to be safe
+	        for i = 1, 5 do
+	                camera.CameraType = Enum.CameraType.Custom
+	                camera.CameraSubject = humanoid
+	                task.wait(0.1)
+	        end
+	
+	        -- Reset all other stuff as before
 	        stopStandLoop()
 	        stopFling()
 	        stopJerkAnimation()
 	        stopView()
-	        stopFreecam()
 	        stopNoclip()
 	        disableFly()
 	        stopRemoteSpy()
 	        stopRunAway()
 	        stopGodlike()
 	        unegor()
+	        unbang()
+	        
 	end)
 	
 	
@@ -1385,4 +1506,4 @@ local function LWFGV_fake_script() -- CommandBox.LocalScript
 	})
 	
 end
-coroutine.wrap(LWFGV_fake_script)()
+coroutine.wrap(BWVJY_fake_script)()

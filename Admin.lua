@@ -344,7 +344,7 @@ bang.BorderColor3 = Color3.fromRGB(15, 15, 15)
 bang.Position = UDim2.new(0, 0, 0.965147436, 0)
 bang.Size = UDim2.new(0, 265, 0, 20)
 bang.Font = Enum.Font.SourceSansBold
-bang.Text = "!bang"
+bang.Text = "!bang [plr] [speed]"
 bang.TextColor3 = Color3.fromRGB(218, 218, 218)
 bang.TextSize = 14.000
 

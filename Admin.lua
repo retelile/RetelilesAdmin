@@ -57,6 +57,7 @@ ScrollMenu.BorderSizePixel = 0
 ScrollMenu.Position = UDim2.new(0.047457628, 0, 0, 0)
 ScrollMenu.Size = UDim2.new(0, 266, 0, 373)
 ScrollMenu.Visible = false
+ScrollMenu.CanvasPosition = Vector2.new(0, 399)
 ScrollMenu.ScrollBarThickness = 0
 
 godlike.Name = "godlike"
@@ -381,7 +382,7 @@ CommandBox.TextSize = 17.000
 
 -- Scripts:
 
-local function ZBLBJ_fake_script() -- Main.Dragify 
+local function BOFLXR_fake_script() -- Main.Dragify 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
@@ -422,8 +423,8 @@ local function ZBLBJ_fake_script() -- Main.Dragify
 	dragify(script.Parent)
 	
 end
-coroutine.wrap(ZBLBJ_fake_script)()
-local function NMIOES_fake_script() -- ImageLabel.LocalScript 
+coroutine.wrap(BOFLXR_fake_script)()
+local function FBSMXI_fake_script() -- ImageLabel.LocalScript 
 	local script = Instance.new('LocalScript', ImageLabel)
 
 	local TweenService = game:GetService("TweenService")
@@ -451,8 +452,8 @@ local function NMIOES_fake_script() -- ImageLabel.LocalScript
 	end)
 	
 end
-coroutine.wrap(NMIOES_fake_script)()
-local function HYKTZE_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(FBSMXI_fake_script)()
+local function JDYSSM_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local searchBox = script.Parent 
@@ -484,8 +485,8 @@ local function HYKTZE_fake_script() -- CommandBox.LocalScript
 	end)
 	
 end
-coroutine.wrap(HYKTZE_fake_script)()
-local function HEUCFFY_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(JDYSSM_fake_script)()
+local function AHUAZN_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local Players = game:GetService("Players")
@@ -530,12 +531,20 @@ local function HEUCFFY_fake_script() -- CommandBox.LocalScript
 	        return nil
 	end
 	
+	-- Make sure these are declared somewhere above
 	local banging = false
 	local currentTarget = nil
 	local animTrack = nil
 	local bangConnection = nil
 	
-	function bang(targetPlayer)
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	
+	function bang(targetPlayer, speed)
 	        if banging then return end
 	        if not targetPlayer or not targetPlayer.Character then
 	                warn("Invalid target player for bang")
@@ -558,17 +567,20 @@ local function HEUCFFY_fake_script() -- CommandBox.LocalScript
 	                animator = Instance.new("Animator")
 	                animator.Parent = humanoid
 	        end
+	
 	        local anim = Instance.new("Animation")
 	        anim.AnimationId = "rbxassetid://148831003"
 	        animTrack = animator:LoadAnimation(anim)
 	        animTrack.Looped = true
 	        animTrack:Play()
+	        animTrack:AdjustSpeed(speed or 1) -- default speed = 1
 	
 	        -- Loop teleport behind target
 	        if bangConnection then
 	                bangConnection:Disconnect()
 	                bangConnection = nil
 	        end
+	
 	        bangConnection = RunService.RenderStepped:Connect(function()
 	                if not banging or not currentTarget or not currentTarget.Character then
 	                        unbang()
@@ -578,8 +590,7 @@ local function HEUCFFY_fake_script() -- CommandBox.LocalScript
 	                local targetHRP = currentTarget.Character:FindFirstChild("HumanoidRootPart")
 	                local myHRP = character:FindFirstChild("HumanoidRootPart")
 	                if targetHRP and myHRP then
-	                        -- Position 2 studs behind the target, facing the target
-	                        local backOffset = CFrame.new(0, 0, 2)
+	                        local backOffset = CFrame.new(0, 0, 1.4)
 	                        local behindCFrame = targetHRP.CFrame * backOffset
 	                        myHRP.CFrame = CFrame.new(behindCFrame.Position, targetHRP.Position)
 	                end
@@ -601,9 +612,6 @@ local function HEUCFFY_fake_script() -- CommandBox.LocalScript
 	                bangConnection = nil
 	        end
 	end
-	
-	
-	
 	
 	
 	
@@ -1128,71 +1136,90 @@ local function HEUCFFY_fake_script() -- CommandBox.LocalScript
 	end
 	
 	local Players = game:GetService("Players")
-	local player = Players.LocalPlayer
-	local character = player.Character or player.CharacterAdded:Wait()
-	local humanoid = character:WaitForChild("Humanoid")
-	local Players = game:GetService("Players")
-	local player = Players.LocalPlayer
-	local character = player.Character or player.CharacterAdded:Wait()
-	local humanoid = character:WaitForChild("Humanoid")
-	
-	local Players = game:GetService("Players")
-	local player = Players.LocalPlayer
-	local character = player.Character or player.CharacterAdded:Wait()
-	local humanoid = character:WaitForChild("Humanoid")
-	
-	local egorActive = false
-	local egorAnimTracks = {}
-	local animationPlayedConnection
-	
-	local function onAnimationPlayed(track)
-	        local name = track.Name:lower()
-	        if egorActive and (name:find("run") or name:find("walk")) then
-	                track:AdjustSpeed(5)
-	                table.insert(egorAnimTracks, track)
-	        end
-	end
-	
-	function egor()
-	        if egorActive then return end
-	        egorActive = true
-	
-	        humanoid.WalkSpeed = 2 -- slow movement
-	
-	        -- Speed up currently playing walk/run animations
-	        for _, track in pairs(humanoid:GetPlayingAnimationTracks()) do
-	                local name = track.Name:lower()
-	                if name:find("run") or name:find("walk") then
-	                        track:AdjustSpeed(5)
-	                        table.insert(egorAnimTracks, track)
-	                end
-	        end
-	
-	        -- Connect AnimationPlayed event to catch new animations
-	        if not animationPlayedConnection then
-	                animationPlayedConnection = humanoid.AnimationPlayed:Connect(onAnimationPlayed)
-	        end
-	end
-	
-	function unegor()
-	        if not egorActive then return end
-	        egorActive = false
-	
-	        humanoid.WalkSpeed = 16 -- or originalWalkSpeed if you saved it
-	
-	        for _, track in pairs(egorAnimTracks) do
-	                if track.IsPlaying then
-	                        track:AdjustSpeed(1)
-	                end
-	        end
-	        egorAnimTracks = {}
-	
-	        if animationPlayedConnection then
-	                animationPlayedConnection:Disconnect()
-	                animationPlayedConnection = nil
-	        end
-	end
-	
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local egorActive = false
+local egorAnimTracks = {}
+local animationPlayedConnection
+local originalWalkSpeed = humanoid.WalkSpeed or 16
+local updateConnection
+
+local function speedUpTrack(track)
+    local name = track.Name:lower()
+    if name:find("run") or name:find("walk") then
+        track:AdjustSpeed(5)
+        return true
+    end
+    return false
+end
+
+local function onAnimationPlayed(track)
+    if egorActive then
+        if speedUpTrack(track) then
+            table.insert(egorAnimTracks, track)
+        end
+    end
+end
+
+local function updateAnimSpeeds()
+    for _, track in pairs(humanoid:GetPlayingAnimationTracks()) do
+        if speedUpTrack(track) and not table.find(egorAnimTracks, track) then
+            table.insert(egorAnimTracks, track)
+        end
+    end
+end
+
+function egor()
+    if egorActive then return end
+    egorActive = true
+
+    originalWalkSpeed = humanoid.WalkSpeed or 16
+    humanoid.WalkSpeed = 2 -- slow movement
+
+    -- speed up any current animations
+    updateAnimSpeeds()
+
+    -- listen for new animations
+    animationPlayedConnection = humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+    -- keep updating animation speeds every 0.5 seconds (in case animations change)
+    updateConnection = RunService.Heartbeat:Connect(function()
+        if egorActive then
+            updateAnimSpeeds()
+        end
+    end)
+end
+
+function unegor()
+    if not egorActive then return end
+    egorActive = false
+
+    humanoid.WalkSpeed = originalWalkSpeed or 16
+
+    -- reset animation speeds to normal
+    for _, track in pairs(egorAnimTracks) do
+        if track.IsPlaying then
+            track:AdjustSpeed(1)
+        end
+    end
+    egorAnimTracks = {}
+
+    if animationPlayedConnection then
+        animationPlayedConnection:Disconnect()
+        animationPlayedConnection = nil
+    end
+
+    if updateConnection then
+        updateConnection:Disconnect()
+        updateConnection = nil
+    end
+end
+
 	
 	
 	
@@ -1445,12 +1472,13 @@ local function HEUCFFY_fake_script() -- CommandBox.LocalScript
 	
 	        elseif cmd == "bang" then
 	                if not arg1 then
-	                        warn("Usage: !bang username")
+	                        warn("Usage: !bang username [speed]")
 	                        return
 	                end
 	                local targetPlayer = findPlayerByName(arg1)
+	                local speed = tonumber(args[3]) or 1 -- optional speed
 	                if targetPlayer then
-	                        bang(targetPlayer)
+	                        bang(targetPlayer, speed)
 	                else
 	                        warn("Player not found: "..arg1)
 	                end
@@ -1509,7 +1537,7 @@ local function HEUCFFY_fake_script() -- CommandBox.LocalScript
 	end)
 	
 	
-	-- Notifications on join
+
 	StarterGui:SetCore("SendNotification", {
 	        Title = "IMPORTANT NOTIFICATION BY RETELILE'S COMMANDS";
 	        Text = 'The prefix is "!" else commands won\'t work.';
@@ -1524,4 +1552,4 @@ local function HEUCFFY_fake_script() -- CommandBox.LocalScript
 	})
 	
 end
-coroutine.wrap(HEUCFFY_fake_script)()
+coroutine.wrap(AHUAZN_fake_script)()

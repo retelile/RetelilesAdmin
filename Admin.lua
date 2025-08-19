@@ -1,4 +1,5 @@
-
+-- made by retelile
+--Enjoy Retelile's Commands!
 local RetelileUI = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local ScrollMenu = Instance.new("ScrollingFrame")
@@ -15,7 +16,7 @@ local fly = Instance.new("TextButton")
 local UnStand = Instance.new("TextButton")
 local Stand = Instance.new("TextButton")
 local Speed = Instance.new("TextButton")
-local RemoteSpy = Instance.new("TextButton")
+local SimpleSpy = Instance.new("TextButton")
 local Noclip = Instance.new("TextButton")
 local JumpPower = Instance.new("TextButton")
 local blackdetector = Instance.new("TextButton")
@@ -30,9 +31,13 @@ local egor = Instance.new("TextButton")
 local unegor = Instance.new("TextButton")
 local bang = Instance.new("TextButton")
 local unbang = Instance.new("TextButton")
+local esp = Instance.new("TextButton")
+local unesp = Instance.new("TextButton")
+local aimbot = Instance.new("TextButton")
+local dex = Instance.new("TextButton")
 local CommandBox = Instance.new("TextBox")
-local ImageLabel = Instance.new("ImageLabel")
 local ColorButton = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
 local Colors = Instance.new("Frame")
 local Red = Instance.new("ImageButton")
 local Purple = Instance.new("ImageButton")
@@ -210,16 +215,16 @@ Speed.Text = "!walkspeed [num]"
 Speed.TextColor3 = Color3.fromRGB(218, 218, 218)
 Speed.TextSize = 14.000
 
-RemoteSpy.Name = "RemoteSpy"
-RemoteSpy.Parent = ScrollMenu
-RemoteSpy.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
-RemoteSpy.BorderColor3 = Color3.fromRGB(15, 15, 15)
-RemoteSpy.Position = UDim2.new(0, 0, 0.722222209, 0)
-RemoteSpy.Size = UDim2.new(0, 261, 0, 20)
-RemoteSpy.Font = Enum.Font.SourceSansBold
-RemoteSpy.Text = "!remotespy"
-RemoteSpy.TextColor3 = Color3.fromRGB(218, 218, 218)
-RemoteSpy.TextSize = 14.000
+SimpleSpy.Name = "SimpleSpy"
+SimpleSpy.Parent = ScrollMenu
+SimpleSpy.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+SimpleSpy.BorderColor3 = Color3.fromRGB(15, 15, 15)
+SimpleSpy.Position = UDim2.new(0, 0, 0.722222209, 0)
+SimpleSpy.Size = UDim2.new(0, 261, 0, 20)
+SimpleSpy.Font = Enum.Font.SourceSansBold
+SimpleSpy.Text = "!remotespy"
+SimpleSpy.TextColor3 = Color3.fromRGB(218, 218, 218)
+SimpleSpy.TextSize = 14.000
 
 Noclip.Name = "Noclip"
 Noclip.Parent = ScrollMenu
@@ -316,7 +321,7 @@ unascend.BorderColor3 = Color3.fromRGB(15, 15, 15)
 unascend.Position = UDim2.new(0, 0, 1.22222221, 0)
 unascend.Size = UDim2.new(0, 261, 0, 20)
 unascend.Font = Enum.Font.SourceSansBold
-unascend.Text = "!unescand"
+unascend.Text = "!unascend"
 unascend.TextColor3 = Color3.fromRGB(218, 218, 218)
 unascend.TextSize = 14.000
 
@@ -367,6 +372,50 @@ unbang.Text = "!unbang"
 unbang.TextColor3 = Color3.fromRGB(218, 218, 218)
 unbang.TextSize = 14.000
 
+esp.Name = "esp"
+esp.Parent = ScrollMenu
+esp.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+esp.BorderColor3 = Color3.fromRGB(15, 15, 15)
+esp.Position = UDim2.new(0, 0, 1.16666663, 0)
+esp.Size = UDim2.new(0, 261, 0, 20)
+esp.Font = Enum.Font.SourceSansBold
+esp.Text = "!esp"
+esp.TextColor3 = Color3.fromRGB(218, 218, 218)
+esp.TextSize = 14.000
+
+unesp.Name = "unesp"
+unesp.Parent = ScrollMenu
+unesp.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+unesp.BorderColor3 = Color3.fromRGB(15, 15, 15)
+unesp.Position = UDim2.new(0, 0, 1.16666663, 0)
+unesp.Size = UDim2.new(0, 261, 0, 20)
+unesp.Font = Enum.Font.SourceSansBold
+unesp.Text = "!unesp"
+unesp.TextColor3 = Color3.fromRGB(218, 218, 218)
+unesp.TextSize = 14.000
+
+aimbot.Name = "aimbot"
+aimbot.Parent = ScrollMenu
+aimbot.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+aimbot.BorderColor3 = Color3.fromRGB(15, 15, 15)
+aimbot.Position = UDim2.new(0, 0, 0.833333313, 0)
+aimbot.Size = UDim2.new(0, 261, 0, 20)
+aimbot.Font = Enum.Font.SourceSansBold
+aimbot.Text = "!aimbot"
+aimbot.TextColor3 = Color3.fromRGB(218, 218, 218)
+aimbot.TextSize = 14.000
+
+dex.Name = "dex"
+dex.Parent = ScrollMenu
+dex.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+dex.BorderColor3 = Color3.fromRGB(15, 15, 15)
+dex.Position = UDim2.new(0, 0, 0.833333313, 0)
+dex.Size = UDim2.new(0, 261, 0, 20)
+dex.Font = Enum.Font.SourceSansBold
+dex.Text = "!dex"
+dex.TextColor3 = Color3.fromRGB(218, 218, 218)
+dex.TextSize = 14.000
+
 CommandBox.Name = "CommandBox"
 CommandBox.Parent = Main
 CommandBox.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
@@ -378,15 +427,6 @@ CommandBox.Font = Enum.Font.SourceSans
 CommandBox.Text = "!"
 CommandBox.TextColor3 = Color3.fromRGB(206, 206, 206)
 CommandBox.TextSize = 17.000
-
-ImageLabel.Parent = Main
-ImageLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.231858909, 0, 0.295731604, 0)
-ImageLabel.Size = UDim2.new(0, 157, 0, 156)
-ImageLabel.Image = "rbxassetid://102430410834506"
 
 ColorButton.Name = "ColorButton"
 ColorButton.Parent = Main
@@ -400,11 +440,20 @@ ColorButton.Text = "Color Picker"
 ColorButton.TextColor3 = Color3.fromRGB(239, 239, 239)
 ColorButton.TextSize = 14.000
 
+ImageLabel.Parent = Main
+ImageLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.231858909, 0, 0.295731604, 0)
+ImageLabel.Size = UDim2.new(0, 157, 0, 156)
+ImageLabel.Image = "rbxassetid://102430410834506"
+
 Colors.Name = "Colors"
 Colors.Parent = RetelileUI
 Colors.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
 Colors.BorderColor3 = Color3.fromRGB(20, 20, 20)
-Colors.Position = UDim2.new(0.338565022, 0, 0.230870709, 0)
+Colors.Position = UDim2.new(0.127802685, 0, 0.230870709, 0)
 Colors.Size = UDim2.new(0, 30, 0, 311)
 Colors.Visible = false
 
@@ -478,82 +527,52 @@ RGBColourPicker.TextYAlignment = Enum.TextYAlignment.Top
 
 -- Scripts:
 
-local function TSUTR_fake_script() -- Main.Dragify 
+local function FQRAQDH_fake_script() -- Main.Dragify 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
+	local TweenService = game:GetService("TweenService")
+	
 	function dragify(Frame)
-		dragToggle = nil
-		dragSpeed = 0.15
-		dragInput = nil
-		dragStart = nil
-		dragPos = nil
-		function updateInput(input)
-			Delta = input.Position - dragStart
-			Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
-		end
-		Frame.InputBegan:Connect(function(input)
-			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-				dragToggle = true
-				dragStart = input.Position
-				startPos = Frame.Position
-				input.Changed:Connect(function()
-					if input.UserInputState == Enum.UserInputState.End then
-						dragToggle = false
-					end
-				end)
-			end
-		end)
-		Frame.InputChanged:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-				dragInput = input
-			end
-		end)
-		game:GetService("UserInputService").InputChanged:Connect(function(input)
-			if input == dragInput and dragToggle then
-				updateInput(input)
-			end
-		end)
+	        local dragToggle, dragInput, dragStart, startPos
+	
+	        local function updateInput(input)
+	                local Delta = input.Position - dragStart
+	                local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	                TweenService:Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
+	        end
+	
+	        Frame.InputBegan:Connect(function(input)
+	                if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and not UIS:GetFocusedTextBox() then
+	                        dragToggle = true
+	                        dragStart = input.Position
+	                        startPos = Frame.Position
+	                        input.Changed:Connect(function()
+	                                if input.UserInputState == Enum.UserInputState.End then
+	                                        dragToggle = false
+	                                end
+	                        end)
+	                end
+	        end)
+	
+	        Frame.InputChanged:Connect(function(input)
+	                if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+	                        dragInput = input
+	                end
+	        end)
+	
+	        UIS.InputChanged:Connect(function(input)
+	                if input == dragInput and dragToggle then
+	                        updateInput(input)
+	                end
+	        end)
 	end
+	
 	dragify(script.Parent)
 	
 end
-coroutine.wrap(TSUTR_fake_script)()
-local function NBPTM_fake_script() -- CommandBox.LocalScript 
-	local script = Instance.new('LocalScript', CommandBox)
-
-	local searchBox = script.Parent 
-	local scrollMenu = script.Parent.Parent:WaitForChild("ScrollMenu") 
-	
-	local function filterButtons(text)
-	        local searchText = text:lower()
-	
-	        if searchText == "" then
-	              
-	                for _, button in pairs(scrollMenu:GetChildren()) do
-	                        if button:IsA("TextButton") then
-	                                button.Visible = true
-	                        end
-	                end
-	        else
-	                
-	                for _, button in pairs(scrollMenu:GetChildren()) do
-	                        if button:IsA("TextButton") then
-	                                local btnText = button.Text:lower()
-	                                button.Visible = btnText:find(searchText) ~= nil
-	                        end
-	                end
-	        end
-	end
-	
-	searchBox:GetPropertyChangedSignal("Text"):Connect(function()
-	        filterButtons(searchBox.Text)
-	end)
-	
-end
-coroutine.wrap(NBPTM_fake_script)()
-local function XFPUPM_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(FQRAQDH_fake_script)()
+local function CWQGEE_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local Players = game:GetService("Players")
@@ -793,8 +812,60 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	end
 	
 	local function loadJerkAnimation()
-	        loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))()
+	        loadstring(game:HttpGet("https://raw.githubusercontent.com/Sakupenny/Universal-Jerk-Off/refs/heads/main/Main.lua"))()
+	
 	end
+	
+	local function AimBot()
+	        local Players = game:GetService("Players")
+	        local UIS = game:GetService("UserInputService")
+	        local StarterGui = game:GetService("StarterGui")
+	        local Camera = workspace.CurrentCamera
+	        local LocalPlayer = Players.LocalPlayer
+	        local AimbotEnabled = false
+	
+	        local function Notify(msg)
+	                StarterGui:SetCore("SendNotification",{Title="Aimbot",Text=msg,Duration=2})
+	        end
+	
+	        local function GetClosestPlayer()
+	                local Mouse = UIS:GetMouseLocation()
+	                local Closest,Dist = nil,math.huge
+	                for _,plr in ipairs(Players:GetPlayers()) do
+	                        if plr ~= LocalPlayer and plr.Character and plr.Character:FindFirstChild("Head") then
+	                                local Pos,_ = Camera:WorldToViewportPoint(plr.Character.Head.Position)
+	                                local Magnitude = (Vector2.new(Pos.X,Pos.Y) - Mouse).Magnitude
+	                                if Magnitude < Dist then
+	                                        Dist = Magnitude
+	                                        Closest = plr
+	                                end
+	                        end
+	                end
+	                return Closest
+	        end
+	
+	        UIS.InputBegan:Connect(function(input,gp)
+	                if not gp and input.KeyCode == Enum.KeyCode.Z then
+	                        AimbotEnabled = not AimbotEnabled
+	                        Notify("Aimbot Toggle:Z")
+	                end
+	        end)
+	
+	        game:GetService("RunService").RenderStepped:Connect(function()
+	                if AimbotEnabled then
+	                        local Target = GetClosestPlayer()
+	                        if Target and Target.Character and Target.Character:FindFirstChild("Head") then
+	                                Camera.CFrame = CFrame.new(Camera.CFrame.Position,Target.Character.Head.Position)
+	                        end
+	                end
+	        end)
+	end
+	
+	
+	
+	
+	
+	
 	
 	
 	local standTargetPlayer = nil
@@ -806,6 +877,17 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	        standTargetPlayer = target
 	        humanoid.WalkSpeed = 100
 	        humanoid.JumpPower = 50
+	
+	        -- Check for R15 and play animation
+	        if target and target.Character and target.Character:FindFirstChild("Humanoid") then
+	                local targetHumanoid = target.Character.Humanoid
+	                if targetHumanoid.RigType == Enum.HumanoidRigType.R15 then
+	                        local anim = Instance.new("Animation")
+	                        anim.AnimationId = "rbxassetid://116665722283847"
+	                        local track = targetHumanoid:LoadAnimation(anim)
+	                        track:Play()
+	                end
+	        end
 	
 	        standLoopConnection = RunService.RenderStepped:Connect(function()
 	                if standActive and standTargetPlayer and standTargetPlayer.Character and standTargetPlayer.Character:FindFirstChild("HumanoidRootPart") then
@@ -958,6 +1040,73 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	        camera.CameraType = Enum.CameraType.Custom
 	end
 	
+	local Players = game:GetService("Players")
+	local LocalPlayer = Players.LocalPlayer
+	
+	local function dio()
+	local player = game.Players.LocalPlayer
+	local Humanoid = player.Character:WaitForChild("Humanoid")
+	        local animator = humanoid:FindFirstChildOfClass("Animator")
+	        if not animator then
+	                animator = Instance.new("Animator")
+	                animator.Parent = humanoid
+	        end
+	
+	        local anim = Instance.new("Animation")
+	        anim.AnimationId = "rbxassetid://100621486420147"
+	        animTrack = animator:LoadAnimation(anim)
+	        animTrack.Looped = true
+	        animTrack:Play()
+	end
+	
+	
+	function ESP()
+	        for _, player in ipairs(Players:GetPlayers()) do
+	                if player ~= LocalPlayer and player.Character then
+	                        local highlight = player.Character:FindFirstChild("ESPHighlight")
+	                        if not highlight then
+	                                highlight = Instance.new("Highlight")
+	                                highlight.Name = "ESPHighlight"
+	                                highlight.FillTransparency = 0.5
+	                                highlight.OutlineTransparency = 0
+	                                highlight.Adornee = player.Character
+	                                highlight.Parent = player.Character
+	
+	                                if player.Team and player.Team.TeamColor then
+	                                        highlight.FillColor = player.Team.TeamColor.Color
+	                                else
+	                                        highlight.FillColor = Color3.fromRGB(255, 255, 0) -- Yellow for neutral
+	                                end
+	                        end
+	                end
+	        end
+	end
+	
+	
+	function UNESP()
+	        for _, player in ipairs(Players:GetPlayers()) do
+	                if player ~= LocalPlayer and player.Character then
+	                        local highlight = player.Character:FindFirstChild("ESPHighlight")
+	                        if highlight then
+	                                highlight:Destroy()
+	                        end
+	                end
+	        end
+	end
+	
+	
+	Players.PlayerAdded:Connect(function(player)
+	        player.CharacterAdded:Connect(function()
+	                ESP()
+	        end)
+	end)
+	
+	Players.PlayerRemoving:Connect(function()
+	        ESP()
+	end)
+	
+	
+	
 	
 	local UserInputService = game:GetService("UserInputService")
 	local RunService = game:GetService("RunService")
@@ -1087,6 +1236,38 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	end)
 	
 	
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local UIS = game:GetService("UserInputService")
+	
+	local player = Players.LocalPlayer
+	local mouse = player:GetMouse()
+	local camera = workspace.CurrentCamera
+	
+	local grabDistance = 12
+	local holdDistance = 8
+	local throwPower = 120
+	
+	local grabbedPart = nil
+	
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local player = Players.LocalPlayer
+	local mouse = player:GetMouse()
+	
+	local teleTool
+	local grabbedPart
+	local connection
+	
+	function dex()
+	        loadstring(game:HttpGet("https://raw.githubusercontent.com/LorekeeperZinnia/Dex/refs/heads/master/main.lua"))()
+	end
+	
+	
+	
+	
+	
+	
 	
 	local noclipActive = false
 	local noclipConnection
@@ -1123,78 +1304,41 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	        end
 	end
 	
-	local function onRemoteFired(remoteName, method, ...)
-	        if remotespyActive then
-	                StarterGui:SetCore("SendNotification", {
-	                        Title = "Remote Fired";
-	                        Text = remoteName .. " fired (" .. method .. ")";
-	                        Duration = 5;
-	                })
-	        end
-	end
+	local Players = game:GetService("Players")
+	local StarterGui = game:GetService("StarterGui")
+	local LocalPlayer = Players.LocalPlayer
+	local remotespyActive = false
 	
-	local function hookRemote(remote)
-	        if remote and not remoteConnections[remote] then
-	                remoteConnections[remote] = true
-	
-	                if remote:IsA("RemoteEvent") then
-	                        local oldFire = remote.FireServer
-	                        remote.FireServer = function(self, ...)
-	                                onRemoteFired(remote.Name, "FireServer", ...)
-	                                return oldFire(self, ...)
-	                        end
-	
-	                        local oldFireClient = remote.FireClient
-	                        remote.FireClient = function(self, ...)
-	                                onRemoteFired(remote.Name, "FireClient", ...)
-	                                return oldFireClient(self, ...)
-	                        end
-	
-	                elseif remote:IsA("RemoteFunction") then
-	                        local oldInvoke = remote.InvokeServer
-	                        remote.InvokeServer = function(self, ...)
-	                                onRemoteFired(remote.Name, "InvokeServer", ...)
-	                                return oldInvoke(self, ...)
-	                        end
-	
-	                        local oldInvokeClient = remote.InvokeClient
-	                        remote.InvokeClient = function(self, ...)
-	                                onRemoteFired(remote.Name, "InvokeClient", ...)
-	                                return oldInvokeClient(self, ...)
-	                        end
-	                end
-	        end
-	end
-	
-	local function scanForRemotes(parent)
-	        for _, child in pairs(parent:GetChildren()) do
-	                if child:IsA("RemoteEvent") or child:IsA("RemoteFunction") then
-	                        hookRemote(child)
-	                end
-	                scanForRemotes(child)
-	        end
+	local function Notify(t)
+	        StarterGui:SetCore("SendNotification",{Title="RemoteSpy",Text=t,Duration=5})
 	end
 	
 	local function startRemoteSpy()
 	        if remotespyActive then return end
 	        remotespyActive = true
-	        scanForRemotes(game)
-	        StarterGui:SetCore("SendNotification", {
-	                Title = "RemoteSpy";
-	                Text = "RemoteSpy enabled";
-	                Duration = 5;
-	        })
+	        local mt = getrawmetatable(game)
+	        local old = mt.__namecall
+	        setreadonly(mt,false)
+	        mt.__namecall = function(self,...)
+	                if remotespyActive and (self:IsA("RemoteEvent") or self:IsA("RemoteFunction")) then
+	                        local method = getnamecallmethod()
+	                        Notify(self.Name.." fired ("..method..")")
+	                end
+	                return old(self,...)
+	        end
+	        setreadonly(mt,true)
+	        Notify("RemoteSpy enabled")
 	end
 	
 	local function stopRemoteSpy()
 	        if not remotespyActive then return end
 	        remotespyActive = false
-	        StarterGui:SetCore("SendNotification", {
-	                Title = "RemoteSpy";
-	                Text = "RemoteSpy disabled";
-	                Duration = 5;
-	        })
+	        Notify("RemoteSpy disabled")
 	end
+	
+	
+	
+	
 	
 	local Players = game:GetService("Players")
 	local player = Players.LocalPlayer
@@ -1369,7 +1513,6 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	
 	
 	
-	
 	local function processCommand(msg)
 	        if type(msg) ~= "string" then return end
 	        if msg:sub(1,1) ~= "!" then return end
@@ -1383,15 +1526,10 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	        local arg1 = args[2]
 	
 	        if cmd == "stand" then
-	                if not arg1 then
-	                        warn("Usage: !stand username")
-	                        return
-	                end
+	                if not arg1 then return end
 	                local targetPlayer = findPlayerByName(arg1)
 	                if targetPlayer then
 	                        startStandLoop(targetPlayer)
-	                else
-	                        warn("Player not found: "..arg1)
 	                end
 	
 	        elseif cmd == "unstand" then
@@ -1399,10 +1537,8 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	
 	        elseif cmd == "jerk" then
 	                loadJerkAnimation()
-	    
 	
 	        elseif cmd == "a" then
-	                
 	
 	        elseif cmd == "fling" then
 	                if flingActive then return end
@@ -1415,51 +1551,35 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	                local num = tonumber(arg1)
 	                if num then
 	                        humanoid.WalkSpeed = num
-	                else
-	                        warn("Usage: !walkspeed number")
 	                end
 	
 	        elseif cmd == "jumppower" then
 	                local num = tonumber(arg1)
 	                if num then
 	                        humanoid.JumpPower = num
-	                else
-	                        warn("Usage: !jumppower number")
 	                end
 	
 	        elseif cmd == "hipheight" then
 	                local num = tonumber(arg1)
 	                if num then
 	                        humanoid.HipHeight = num
-	                else
-	                        warn("Usage: !hipheight number")
 	                end
 	
 	        elseif cmd == "sit" then
 	                sit()
 	
 	        elseif cmd == "goto" then
-	                if not arg1 then
-	                        warn("Usage: !goto username")
-	                        return
-	                end
+	                if not arg1 then return end
 	                local targetPlayer = findPlayerByName(arg1)
 	                if targetPlayer then
 	                        gotoPlayer(targetPlayer)
-	                else
-	                        warn("Player not found or invalid: "..tostring(arg1))
 	                end
 	
 	        elseif cmd == "view" then
-	                if not arg1 then
-	                        warn("Usage: !view username")
-	                        return
-	                end
+	                if not arg1 then return end
 	                local targetPlayer = findPlayerByName(arg1)
 	                if targetPlayer then
 	                        startView(targetPlayer)
-	                else
-	                        warn("Player not found: "..arg1)
 	                end
 	
 	        elseif cmd == "kfcdetector" then
@@ -1489,14 +1609,14 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	        elseif cmd == "remotespy" then
 	                startRemoteSpy()
 	
+	        elseif cmd == "unremotespy" then
+	                stopRemoteSpy()
+	
 	        elseif cmd == "godlike" then
 	                startGodlike()
 	
 	        elseif cmd == "ungodlike" then
 	                stopGodlike()
-	
-	        elseif cmd == "unremotespy" then
-	                stopRemoteSpy()
 	
 	        elseif cmd == "ascend" then
 	                startRunAway()
@@ -1511,25 +1631,32 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	                unegor()
 	
 	        elseif cmd == "bang" then
-	                if not arg1 then
-	                        warn("Usage: !bang username [speed]")
-	                        return
-	                end
+	                if not arg1 then return end
 	                local targetPlayer = findPlayerByName(arg1)
-	                local speed = tonumber(args[3]) or 1 
+	                local speed = tonumber(args[3]) or 1
 	                if targetPlayer then
 	                        bang(targetPlayer, speed)
-	                else
-	                        warn("Player not found: "..arg1)
 	                end
 	
 	        elseif cmd == "unbang" then
 	                unbang()
 	
-	        else
-	                warn("Unknown command: "..cmd)
+	        elseif cmd == "esp" then
+	                ESP()
+	
+	        elseif cmd == "unesp" then
+	                UNESP()
+	
+	        elseif cmd == "dex" then
+	                dex()
+	
+	        elseif cmd == "aimbot" then
+	                AimBot()
 	        end
 	end
+	
+	
+	
 	
 	
 	
@@ -1573,6 +1700,7 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	        stopGodlike()
 	        unegor()
 	        unbang()
+	        UNESP()
 	        
 	end)
 	
@@ -1592,8 +1720,67 @@ local function XFPUPM_fake_script() -- CommandBox.LocalScript
 	})
 	
 end
-coroutine.wrap(XFPUPM_fake_script)()
-local function KBYYU_fake_script() -- ImageLabel.LocalScript 
+coroutine.wrap(CWQGEE_fake_script)()
+local function UZEYZZ_fake_script() -- CommandBox.LocalScript 
+	local script = Instance.new('LocalScript', CommandBox)
+
+	local searchBox = script.Parent 
+	local scrollMenu = script.Parent.Parent:WaitForChild("ScrollMenu") 
+	
+	local function filterButtons(text)
+	        local searchText = text:lower()
+	
+	        if searchText == "" then
+	              
+	                for _, button in pairs(scrollMenu:GetChildren()) do
+	                        if button:IsA("TextButton") then
+	                                button.Visible = true
+	                        end
+	                end
+	        else
+	                
+	                for _, button in pairs(scrollMenu:GetChildren()) do
+	                        if button:IsA("TextButton") then
+	                                local btnText = button.Text:lower()
+	                                button.Visible = btnText:find(searchText) ~= nil
+	                        end
+	                end
+	        end
+	end
+	
+	searchBox:GetPropertyChangedSignal("Text"):Connect(function()
+	        filterButtons(searchBox.Text)
+	end)
+	
+end
+coroutine.wrap(UZEYZZ_fake_script)()
+local function CFMZSQC_fake_script() -- ColorButton.LocalScript 
+	local script = Instance.new('LocalScript', ColorButton)
+
+	local tweenservice = game:GetService("TweenService")
+	local button = script.Parent
+	local color = script.Parent.Parent.Parent.Colors
+	local open = false
+	
+	local tweeninfo = TweenInfo.new(0.2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	local sizeOpen = UDim2.new(0, 400, 0, 311)
+	local sizeClosed = UDim2.new(0, 0, 0, 0)
+	
+	button.MouseButton1Click:Connect(function()
+	        open = not open
+	        local goal = { Size = open and sizeOpen or sizeClosed }
+	        color.Visible = true
+	        local tween = tweenservice:Create(color, tweeninfo, goal)
+	        tween:Play()
+	        if not open then
+	                tween.Completed:Wait()
+	                color.Visible = false
+	        end
+	end)
+	
+end
+coroutine.wrap(CFMZSQC_fake_script)()
+local function RFGLDA_fake_script() -- ImageLabel.LocalScript 
 	local script = Instance.new('LocalScript', ImageLabel)
 
 	local TweenService = game:GetService("TweenService")
@@ -1623,76 +1810,53 @@ local function KBYYU_fake_script() -- ImageLabel.LocalScript
 	end)
 	
 end
-coroutine.wrap(KBYYU_fake_script)()
-local function RNNOY_fake_script() -- ColorButton.LocalScript 
-	local script = Instance.new('LocalScript', ColorButton)
-
-	local tweenservice = game:GetService("TweenService")
-	local button = script.Parent
-	local color = script.Parent.Parent.Parent.Colors
-	local open = false
-	
-	local tweeninfo = TweenInfo.new(0.2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
-	local sizeOpen = UDim2.new(0, 400, 0, 311)
-	local sizeClosed = UDim2.new(0, 0, 0, 0)
-	
-	button.MouseButton1Click:Connect(function()
-	        open = not open
-	        local goal = { Size = open and sizeOpen or sizeClosed }
-	        color.Visible = true
-	        local tween = tweenservice:Create(color, tweeninfo, goal)
-	        tween:Play()
-	        if not open then
-	                tween.Completed:Wait()
-	                color.Visible = false
-	        end
-	end)
-	
-end
-coroutine.wrap(RNNOY_fake_script)()
-local function HYJAMH_fake_script() -- Colors.Dragify 
+coroutine.wrap(RFGLDA_fake_script)()
+local function LPOQR_fake_script() -- Colors.Dragify 
 	local script = Instance.new('LocalScript', Colors)
 
 	local UIS = game:GetService("UserInputService")
+	local TweenService = game:GetService("TweenService")
+	
 	function dragify(Frame)
-		dragToggle = nil
-		dragSpeed = 0.15
-		dragInput = nil
-		dragStart = nil
-		dragPos = nil
-		function updateInput(input)
-			Delta = input.Position - dragStart
-			Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
-		end
-		Frame.InputBegan:Connect(function(input)
-			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-				dragToggle = true
-				dragStart = input.Position
-				startPos = Frame.Position
-				input.Changed:Connect(function()
-					if input.UserInputState == Enum.UserInputState.End then
-						dragToggle = false
-					end
-				end)
-			end
-		end)
-		Frame.InputChanged:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-				dragInput = input
-			end
-		end)
-		game:GetService("UserInputService").InputChanged:Connect(function(input)
-			if input == dragInput and dragToggle then
-				updateInput(input)
-			end
-		end)
+	        local dragToggle, dragInput, dragStart, startPos
+	
+	        local function updateInput(input)
+	                local Delta = input.Position - dragStart
+	                local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	                TweenService:Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
+	        end
+	
+	        Frame.InputBegan:Connect(function(input)
+	                if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and not UIS:GetFocusedTextBox() then
+	                        dragToggle = true
+	                        dragStart = input.Position
+	                        startPos = Frame.Position
+	                        input.Changed:Connect(function()
+	                                if input.UserInputState == Enum.UserInputState.End then
+	                                        dragToggle = false
+	                                end
+	                        end)
+	                end
+	        end)
+	
+	        Frame.InputChanged:Connect(function(input)
+	                if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+	                        dragInput = input
+	                end
+	        end)
+	
+	        UIS.InputChanged:Connect(function(input)
+	                if input == dragInput and dragToggle then
+	                        updateInput(input)
+	                end
+	        end)
 	end
+	
 	dragify(script.Parent)
 	
 end
-coroutine.wrap(HYJAMH_fake_script)()
-local function THGNFGU_fake_script() -- Red.LocalScript 
+coroutine.wrap(LPOQR_fake_script)()
+local function HKFWMCI_fake_script() -- Red.LocalScript 
 	local script = Instance.new('LocalScript', Red)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1709,8 +1873,8 @@ local function THGNFGU_fake_script() -- Red.LocalScript
 	end)
 	
 end
-coroutine.wrap(THGNFGU_fake_script)()
-local function YQWUXGX_fake_script() -- Purple.LocalScript 
+coroutine.wrap(HKFWMCI_fake_script)()
+local function HJFRI_fake_script() -- Purple.LocalScript 
 	local script = Instance.new('LocalScript', Purple)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1727,8 +1891,8 @@ local function YQWUXGX_fake_script() -- Purple.LocalScript
 	end)
 	
 end
-coroutine.wrap(YQWUXGX_fake_script)()
-local function UIHZ_fake_script() -- Classic.LocalScript 
+coroutine.wrap(HJFRI_fake_script)()
+local function PZUQM_fake_script() -- Classic.LocalScript 
 	local script = Instance.new('LocalScript', Classic)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1745,8 +1909,8 @@ local function UIHZ_fake_script() -- Classic.LocalScript
 	end)
 	
 end
-coroutine.wrap(UIHZ_fake_script)()
-local function FYDABGK_fake_script() -- Yellow.LocalScript 
+coroutine.wrap(PZUQM_fake_script)()
+local function BLLBG_fake_script() -- Yellow.LocalScript 
 	local script = Instance.new('LocalScript', Yellow)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1763,8 +1927,8 @@ local function FYDABGK_fake_script() -- Yellow.LocalScript
 	end)
 	
 end
-coroutine.wrap(FYDABGK_fake_script)()
-local function KHXQHAX_fake_script() -- Cyan.LocalScript 
+coroutine.wrap(BLLBG_fake_script)()
+local function LMAHSL_fake_script() -- Cyan.LocalScript 
 	local script = Instance.new('LocalScript', Cyan)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1781,8 +1945,8 @@ local function KHXQHAX_fake_script() -- Cyan.LocalScript
 	end)
 	
 end
-coroutine.wrap(KHXQHAX_fake_script)()
-local function ZJRLHRJ_fake_script() -- Green.LocalScript 
+coroutine.wrap(LMAHSL_fake_script)()
+local function JDCSRM_fake_script() -- Green.LocalScript 
 	local script = Instance.new('LocalScript', Green)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1799,8 +1963,8 @@ local function ZJRLHRJ_fake_script() -- Green.LocalScript
 	end)
 	
 end
-coroutine.wrap(ZJRLHRJ_fake_script)()
-local function SYGROQ_fake_script() -- RGBColourPicker.LocalScript 
+coroutine.wrap(JDCSRM_fake_script)()
+local function AJKJS_fake_script() -- RGBColourPicker.LocalScript 
 	local script = Instance.new('LocalScript', RGBColourPicker)
 
 	local Players = game:GetService("Players")
@@ -1852,4 +2016,4 @@ local function SYGROQ_fake_script() -- RGBColourPicker.LocalScript
 	end)
 	
 end
-coroutine.wrap(SYGROQ_fake_script)()
+coroutine.wrap(AJKJS_fake_script)()

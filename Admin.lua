@@ -1,5 +1,4 @@
--- made by retelile
---Enjoy Retelile's Commands!
+
 local RetelileUI = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local ScrollMenu = Instance.new("ScrollingFrame")
@@ -35,6 +34,7 @@ local esp = Instance.new("TextButton")
 local unesp = Instance.new("TextButton")
 local aimbot = Instance.new("TextButton")
 local dex = Instance.new("TextButton")
+local zombify = Instance.new("TextButton")
 local CommandBox = Instance.new("TextBox")
 local ColorButton = Instance.new("TextButton")
 local ImageLabel = Instance.new("ImageLabel")
@@ -58,8 +58,8 @@ Main.Name = "Main"
 Main.Parent = RetelileUI
 Main.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
 Main.BorderColor3 = Color3.fromRGB(20, 20, 20)
-Main.Position = UDim2.new(0.522421539, 0, 0.230870709, 0)
-Main.Size = UDim2.new(0, 322, 0, 386)
+Main.Position = UDim2.new(0.297399014, 0, 0.230870709, 0)
+Main.Size = UDim2.new(0, 522, 0, 386)
 
 ScrollMenu.Name = "ScrollMenu"
 ScrollMenu.Parent = Main
@@ -68,16 +68,17 @@ ScrollMenu.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
 ScrollMenu.BackgroundTransparency = 1.000
 ScrollMenu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ScrollMenu.BorderSizePixel = 0
-ScrollMenu.Position = UDim2.new(0.0446572639, 0, 0.0336787552, 0)
-ScrollMenu.Size = UDim2.new(0, 252, 0, 360)
+ScrollMenu.Position = UDim2.new(0.0389101468, 0, 0.0336787552, 0)
+ScrollMenu.Size = UDim2.new(0, 420, 0, 360)
 ScrollMenu.Visible = false
+ScrollMenu.CanvasPosition = Vector2.new(0, 132)
 ScrollMenu.ScrollBarThickness = 0
 
 godlike.Name = "godlike"
 godlike.Parent = ScrollMenu
 godlike.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 godlike.BorderColor3 = Color3.fromRGB(15, 15, 15)
-godlike.Size = UDim2.new(0, 261, 0, 20)
+godlike.Size = UDim2.new(0, 407, 0, 20)
 godlike.Font = Enum.Font.SourceSansBold
 godlike.Text = "!godlike "
 godlike.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -88,7 +89,7 @@ view.Parent = ScrollMenu
 view.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 view.BorderColor3 = Color3.fromRGB(15, 15, 15)
 view.Position = UDim2.new(0, 0, 0.055555556, 0)
-view.Size = UDim2.new(0, 261, 0, 20)
+view.Size = UDim2.new(0, 407, 0, 20)
 view.Font = Enum.Font.SourceSansBold
 view.Text = "!unview"
 view.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -99,7 +100,7 @@ view_2.Parent = ScrollMenu
 view_2.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 view_2.BorderColor3 = Color3.fromRGB(15, 15, 15)
 view_2.Position = UDim2.new(0, 0, 0.111111112, 0)
-view_2.Size = UDim2.new(0, 261, 0, 20)
+view_2.Size = UDim2.new(0, 407, 0, 20)
 view_2.Font = Enum.Font.SourceSansBold
 view_2.Text = "!view [user]"
 view_2.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -110,7 +111,7 @@ unnoclip.Parent = ScrollMenu
 unnoclip.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 unnoclip.BorderColor3 = Color3.fromRGB(15, 15, 15)
 unnoclip.Position = UDim2.new(0, 0, 0.166666672, 0)
-unnoclip.Size = UDim2.new(0, 261, 0, 20)
+unnoclip.Size = UDim2.new(0, 407, 0, 20)
 unnoclip.Font = Enum.Font.SourceSansBold
 unnoclip.Text = "!unnoclip"
 unnoclip.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -121,7 +122,7 @@ unfreecam.Parent = ScrollMenu
 unfreecam.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 unfreecam.BorderColor3 = Color3.fromRGB(15, 15, 15)
 unfreecam.Position = UDim2.new(0, 0, 0.222222224, 0)
-unfreecam.Size = UDim2.new(0, 261, 0, 20)
+unfreecam.Size = UDim2.new(0, 407, 0, 20)
 unfreecam.Font = Enum.Font.SourceSansBold
 unfreecam.Text = "!unfreecam"
 unfreecam.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -132,7 +133,7 @@ unfly.Parent = ScrollMenu
 unfly.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 unfly.BorderColor3 = Color3.fromRGB(15, 15, 15)
 unfly.Position = UDim2.new(0, 0, 0.277777791, 0)
-unfly.Size = UDim2.new(0, 261, 0, 20)
+unfly.Size = UDim2.new(0, 407, 0, 20)
 unfly.Font = Enum.Font.SourceSansBold
 unfly.Text = "!unfly"
 unfly.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -143,7 +144,7 @@ unfling.Parent = ScrollMenu
 unfling.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 unfling.BorderColor3 = Color3.fromRGB(15, 15, 15)
 unfling.Position = UDim2.new(0, 0, 0.333333343, 0)
-unfling.Size = UDim2.new(0, 261, 0, 20)
+unfling.Size = UDim2.new(0, 407, 0, 20)
 unfling.Font = Enum.Font.SourceSansBold
 unfling.Text = "!unfling"
 unfling.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -154,7 +155,7 @@ sit.Parent = ScrollMenu
 sit.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 sit.BorderColor3 = Color3.fromRGB(15, 15, 15)
 sit.Position = UDim2.new(0, 0, 0.388888896, 0)
-sit.Size = UDim2.new(0, 261, 0, 20)
+sit.Size = UDim2.new(0, 407, 0, 20)
 sit.Font = Enum.Font.SourceSansBold
 sit.Text = "!sit"
 sit.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -165,7 +166,7 @@ freecam.Parent = ScrollMenu
 freecam.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 freecam.BorderColor3 = Color3.fromRGB(15, 15, 15)
 freecam.Position = UDim2.new(0, 0, 0.444444448, 0)
-freecam.Size = UDim2.new(0, 261, 0, 20)
+freecam.Size = UDim2.new(0, 407, 0, 20)
 freecam.Font = Enum.Font.SourceSansBold
 freecam.Text = "!freecam"
 freecam.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -176,7 +177,7 @@ fly.Parent = ScrollMenu
 fly.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 fly.BorderColor3 = Color3.fromRGB(15, 15, 15)
 fly.Position = UDim2.new(0, 0, 0.5, 0)
-fly.Size = UDim2.new(0, 261, 0, 20)
+fly.Size = UDim2.new(0, 407, 0, 20)
 fly.Font = Enum.Font.SourceSansBold
 fly.Text = "!fly"
 fly.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -187,7 +188,7 @@ UnStand.Parent = ScrollMenu
 UnStand.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 UnStand.BorderColor3 = Color3.fromRGB(15, 15, 15)
 UnStand.Position = UDim2.new(0, 0, 0.555555582, 0)
-UnStand.Size = UDim2.new(0, 261, 0, 20)
+UnStand.Size = UDim2.new(0, 407, 0, 20)
 UnStand.Font = Enum.Font.SourceSansBold
 UnStand.Text = "!unstand [User]"
 UnStand.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -198,7 +199,7 @@ Stand.Parent = ScrollMenu
 Stand.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 Stand.BorderColor3 = Color3.fromRGB(15, 15, 15)
 Stand.Position = UDim2.new(0, 0, 0.611111104, 0)
-Stand.Size = UDim2.new(0, 261, 0, 20)
+Stand.Size = UDim2.new(0, 407, 0, 20)
 Stand.Font = Enum.Font.SourceSansBold
 Stand.Text = "!stand [User}"
 Stand.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -209,7 +210,7 @@ Speed.Parent = ScrollMenu
 Speed.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 Speed.BorderColor3 = Color3.fromRGB(15, 15, 15)
 Speed.Position = UDim2.new(0, 0, 0.666666687, 0)
-Speed.Size = UDim2.new(0, 261, 0, 20)
+Speed.Size = UDim2.new(0, 407, 0, 20)
 Speed.Font = Enum.Font.SourceSansBold
 Speed.Text = "!walkspeed [num]"
 Speed.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -220,7 +221,7 @@ SimpleSpy.Parent = ScrollMenu
 SimpleSpy.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 SimpleSpy.BorderColor3 = Color3.fromRGB(15, 15, 15)
 SimpleSpy.Position = UDim2.new(0, 0, 0.722222209, 0)
-SimpleSpy.Size = UDim2.new(0, 261, 0, 20)
+SimpleSpy.Size = UDim2.new(0, 407, 0, 20)
 SimpleSpy.Font = Enum.Font.SourceSansBold
 SimpleSpy.Text = "!remotespy"
 SimpleSpy.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -231,7 +232,7 @@ Noclip.Parent = ScrollMenu
 Noclip.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 Noclip.BorderColor3 = Color3.fromRGB(15, 15, 15)
 Noclip.Position = UDim2.new(0, 0, 0.777777791, 0)
-Noclip.Size = UDim2.new(0, 261, 0, 20)
+Noclip.Size = UDim2.new(0, 407, 0, 20)
 Noclip.Font = Enum.Font.SourceSansBold
 Noclip.Text = "!noclip"
 Noclip.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -242,7 +243,7 @@ JumpPower.Parent = ScrollMenu
 JumpPower.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 JumpPower.BorderColor3 = Color3.fromRGB(15, 15, 15)
 JumpPower.Position = UDim2.new(0, 0, 0.833333313, 0)
-JumpPower.Size = UDim2.new(0, 261, 0, 20)
+JumpPower.Size = UDim2.new(0, 407, 0, 20)
 JumpPower.Font = Enum.Font.SourceSansBold
 JumpPower.Text = "!jumppower  [num]"
 JumpPower.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -252,8 +253,8 @@ blackdetector.Name = "blackdetector"
 blackdetector.Parent = ScrollMenu
 blackdetector.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 blackdetector.BorderColor3 = Color3.fromRGB(15, 15, 15)
-blackdetector.Position = UDim2.new(0, 0, 1.5, 0)
-blackdetector.Size = UDim2.new(0, 261, 0, 20)
+blackdetector.Position = UDim2.new(0, 0, 0.888888896, 0)
+blackdetector.Size = UDim2.new(0, 407, 0, 20)
 blackdetector.Font = Enum.Font.SourceSansBold
 blackdetector.Text = "!kfcdetector"
 blackdetector.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -264,7 +265,7 @@ Jerk.Parent = ScrollMenu
 Jerk.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 Jerk.BorderColor3 = Color3.fromRGB(15, 15, 15)
 Jerk.Position = UDim2.new(0, 0, 0.944444418, 0)
-Jerk.Size = UDim2.new(0, 261, 0, 20)
+Jerk.Size = UDim2.new(0, 407, 0, 20)
 Jerk.Font = Enum.Font.SourceSansBold
 Jerk.Text = "!jerk"
 Jerk.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -275,7 +276,7 @@ HipHeight.Parent = ScrollMenu
 HipHeight.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 HipHeight.BorderColor3 = Color3.fromRGB(15, 15, 15)
 HipHeight.Position = UDim2.new(0, 0, 1, 0)
-HipHeight.Size = UDim2.new(0, 261, 0, 20)
+HipHeight.Size = UDim2.new(0, 407, 0, 20)
 HipHeight.Font = Enum.Font.SourceSansBold
 HipHeight.Text = "!hipheight  [num]"
 HipHeight.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -286,7 +287,7 @@ Fling.Parent = ScrollMenu
 Fling.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 Fling.BorderColor3 = Color3.fromRGB(15, 15, 15)
 Fling.Position = UDim2.new(0, 0, 1.05555558, 0)
-Fling.Size = UDim2.new(0, 261, 0, 20)
+Fling.Size = UDim2.new(0, 407, 0, 20)
 Fling.Font = Enum.Font.SourceSansBold
 Fling.Text = "!fling"
 Fling.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -297,7 +298,7 @@ goto.Parent = ScrollMenu
 goto.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 goto.BorderColor3 = Color3.fromRGB(15, 15, 15)
 goto.Position = UDim2.new(0, 0, 1.11111116, 0)
-goto.Size = UDim2.new(0, 261, 0, 20)
+goto.Size = UDim2.new(0, 407, 0, 20)
 goto.Font = Enum.Font.SourceSansBold
 goto.Text = "!goto [user]"
 goto.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -308,7 +309,7 @@ ascend.Parent = ScrollMenu
 ascend.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 ascend.BorderColor3 = Color3.fromRGB(15, 15, 15)
 ascend.Position = UDim2.new(0, 0, 1.16666663, 0)
-ascend.Size = UDim2.new(0, 261, 0, 20)
+ascend.Size = UDim2.new(0, 407, 0, 20)
 ascend.Font = Enum.Font.SourceSansBold
 ascend.Text = "!ascend"
 ascend.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -319,7 +320,7 @@ unascend.Parent = ScrollMenu
 unascend.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 unascend.BorderColor3 = Color3.fromRGB(15, 15, 15)
 unascend.Position = UDim2.new(0, 0, 1.22222221, 0)
-unascend.Size = UDim2.new(0, 261, 0, 20)
+unascend.Size = UDim2.new(0, 407, 0, 20)
 unascend.Font = Enum.Font.SourceSansBold
 unascend.Text = "!unascend"
 unascend.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -333,7 +334,7 @@ egor.Parent = ScrollMenu
 egor.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 egor.BorderColor3 = Color3.fromRGB(15, 15, 15)
 egor.Position = UDim2.new(0, 0, 1.27777779, 0)
-egor.Size = UDim2.new(0, 261, 0, 20)
+egor.Size = UDim2.new(0, 407, 0, 20)
 egor.Font = Enum.Font.SourceSansBold
 egor.Text = "!egor"
 egor.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -344,7 +345,7 @@ unegor.Parent = ScrollMenu
 unegor.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 unegor.BorderColor3 = Color3.fromRGB(15, 15, 15)
 unegor.Position = UDim2.new(0, 0, 1.33333337, 0)
-unegor.Size = UDim2.new(0, 261, 0, 20)
+unegor.Size = UDim2.new(0, 407, 0, 20)
 unegor.Font = Enum.Font.SourceSansBold
 unegor.Text = "!unegor"
 unegor.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -355,7 +356,7 @@ bang.Parent = ScrollMenu
 bang.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 bang.BorderColor3 = Color3.fromRGB(15, 15, 15)
 bang.Position = UDim2.new(0, 0, 1.38888884, 0)
-bang.Size = UDim2.new(0, 261, 0, 20)
+bang.Size = UDim2.new(0, 407, 0, 20)
 bang.Font = Enum.Font.SourceSansBold
 bang.Text = "!bang"
 bang.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -366,7 +367,7 @@ unbang.Parent = ScrollMenu
 unbang.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 unbang.BorderColor3 = Color3.fromRGB(15, 15, 15)
 unbang.Position = UDim2.new(0, 0, 1.44444442, 0)
-unbang.Size = UDim2.new(0, 261, 0, 20)
+unbang.Size = UDim2.new(0, 407, 0, 20)
 unbang.Font = Enum.Font.SourceSansBold
 unbang.Text = "!unbang"
 unbang.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -376,8 +377,8 @@ esp.Name = "esp"
 esp.Parent = ScrollMenu
 esp.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 esp.BorderColor3 = Color3.fromRGB(15, 15, 15)
-esp.Position = UDim2.new(0, 0, 1.16666663, 0)
-esp.Size = UDim2.new(0, 261, 0, 20)
+esp.Position = UDim2.new(0, 0, 1.5, 0)
+esp.Size = UDim2.new(0, 407, 0, 20)
 esp.Font = Enum.Font.SourceSansBold
 esp.Text = "!esp"
 esp.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -387,8 +388,8 @@ unesp.Name = "unesp"
 unesp.Parent = ScrollMenu
 unesp.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 unesp.BorderColor3 = Color3.fromRGB(15, 15, 15)
-unesp.Position = UDim2.new(0, 0, 1.16666663, 0)
-unesp.Size = UDim2.new(0, 261, 0, 20)
+unesp.Position = UDim2.new(0, 0, 1.55555558, 0)
+unesp.Size = UDim2.new(0, 407, 0, 20)
 unesp.Font = Enum.Font.SourceSansBold
 unesp.Text = "!unesp"
 unesp.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -398,8 +399,8 @@ aimbot.Name = "aimbot"
 aimbot.Parent = ScrollMenu
 aimbot.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 aimbot.BorderColor3 = Color3.fromRGB(15, 15, 15)
-aimbot.Position = UDim2.new(0, 0, 0.833333313, 0)
-aimbot.Size = UDim2.new(0, 261, 0, 20)
+aimbot.Position = UDim2.new(0, 0, 1.61111116, 0)
+aimbot.Size = UDim2.new(0, 407, 0, 20)
 aimbot.Font = Enum.Font.SourceSansBold
 aimbot.Text = "!aimbot"
 aimbot.TextColor3 = Color3.fromRGB(218, 218, 218)
@@ -409,19 +410,30 @@ dex.Name = "dex"
 dex.Parent = ScrollMenu
 dex.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 dex.BorderColor3 = Color3.fromRGB(15, 15, 15)
-dex.Position = UDim2.new(0, 0, 0.833333313, 0)
-dex.Size = UDim2.new(0, 261, 0, 20)
+dex.Position = UDim2.new(0, 0, 1.66666663, 0)
+dex.Size = UDim2.new(0, 407, 0, 20)
 dex.Font = Enum.Font.SourceSansBold
 dex.Text = "!dex"
 dex.TextColor3 = Color3.fromRGB(218, 218, 218)
 dex.TextSize = 14.000
+
+zombify.Name = "zombify"
+zombify.Parent = ScrollMenu
+zombify.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+zombify.BorderColor3 = Color3.fromRGB(15, 15, 15)
+zombify.Position = UDim2.new(0, 0, 0.111111112, 0)
+zombify.Size = UDim2.new(0, 407, 0, 20)
+zombify.Font = Enum.Font.SourceSansBold
+zombify.Text = "!zombify"
+zombify.TextColor3 = Color3.fromRGB(218, 218, 218)
+zombify.TextSize = 14.000
 
 CommandBox.Name = "CommandBox"
 CommandBox.Parent = Main
 CommandBox.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 CommandBox.BorderColor3 = Color3.fromRGB(16, 16, 16)
 CommandBox.Position = UDim2.new(0, 0, -0.046632126, 0)
-CommandBox.Size = UDim2.new(0, 322, 0, 18)
+CommandBox.Size = UDim2.new(0, 522, 0, 18)
 CommandBox.ClearTextOnFocus = false
 CommandBox.Font = Enum.Font.SourceSans
 CommandBox.Text = "!"
@@ -432,8 +444,8 @@ ColorButton.Name = "ColorButton"
 ColorButton.Parent = Main
 ColorButton.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
 ColorButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ColorButton.Position = UDim2.new(0.827813387, 0, 0, 0)
-ColorButton.Size = UDim2.new(0, 55, 0, 53)
+ColorButton.Position = UDim2.new(0.84632796, 0, 0.0207253881, 0)
+ColorButton.Size = UDim2.new(0, 69, 0, 69)
 ColorButton.Visible = false
 ColorButton.Font = Enum.Font.SourceSans
 ColorButton.Text = "Color Picker"
@@ -445,8 +457,8 @@ ImageLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.231858909, 0, 0.295731604, 0)
-ImageLabel.Size = UDim2.new(0, 157, 0, 156)
+ImageLabel.Position = UDim2.new(0.348717123, 0, 0.256871521, 0)
+ImageLabel.Size = UDim2.new(0, 157, 0, 163)
 ImageLabel.Image = "rbxassetid://102430410834506"
 
 Colors.Name = "Colors"
@@ -527,7 +539,7 @@ RGBColourPicker.TextYAlignment = Enum.TextYAlignment.Top
 
 -- Scripts:
 
-local function FQRAQDH_fake_script() -- Main.Dragify 
+local function ACBWHQ_fake_script() -- Main.Dragify 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
@@ -571,8 +583,8 @@ local function FQRAQDH_fake_script() -- Main.Dragify
 	dragify(script.Parent)
 	
 end
-coroutine.wrap(FQRAQDH_fake_script)()
-local function CWQGEE_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(ACBWHQ_fake_script)()
+local function TMNF_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local Players = game:GetService("Players")
@@ -1235,6 +1247,41 @@ local function CWQGEE_fake_script() -- CommandBox.LocalScript
 	        end
 	end)
 	
+	local player = game.Players.LocalPlayer
+	
+	local animations = {
+	        walk = 619537468,
+	        run = 619536621,
+	        jump = 619536283,
+	        climb = 619535091,
+	        idle = {619535834, 619535834} -- duplicate if you only have one
+	}
+	
+	local function zombify()
+	        local char = player.Character or player.CharacterAdded:Wait()
+	        local animate = char:WaitForChild("Animate")
+	
+	        local function setAnim(animObj, id)
+	                if animObj and animObj:IsA("Animation") then
+	                        animObj.AnimationId = "rbxassetid://"..id
+	                end
+	        end
+	
+	        setAnim(animate.walk:FindFirstChild("WalkAnim"), animations.walk)
+	        setAnim(animate.run:FindFirstChild("RunAnim"), animations.run)
+	        setAnim(animate.jump:FindFirstChild("JumpAnim"), animations.jump)
+	        setAnim(animate.climb:FindFirstChild("ClimbAnim"), animations.climb)
+	        setAnim(animate.idle:FindFirstChild("Animation1"), animations.idle[1])
+	        setAnim(animate.idle:FindFirstChild("Animation2"), animations.idle[2])
+	end
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
@@ -1652,6 +1699,8 @@ local function CWQGEE_fake_script() -- CommandBox.LocalScript
 	
 	        elseif cmd == "aimbot" then
 	                AimBot()
+	        elseif cmd == "zombify" then
+	                zombify()
 	        end
 	end
 	
@@ -1720,8 +1769,8 @@ local function CWQGEE_fake_script() -- CommandBox.LocalScript
 	})
 	
 end
-coroutine.wrap(CWQGEE_fake_script)()
-local function UZEYZZ_fake_script() -- CommandBox.LocalScript 
+coroutine.wrap(TMNF_fake_script)()
+local function FKILJG_fake_script() -- CommandBox.LocalScript 
 	local script = Instance.new('LocalScript', CommandBox)
 
 	local searchBox = script.Parent 
@@ -1753,8 +1802,8 @@ local function UZEYZZ_fake_script() -- CommandBox.LocalScript
 	end)
 	
 end
-coroutine.wrap(UZEYZZ_fake_script)()
-local function CFMZSQC_fake_script() -- ColorButton.LocalScript 
+coroutine.wrap(FKILJG_fake_script)()
+local function TBYA_fake_script() -- ColorButton.LocalScript 
 	local script = Instance.new('LocalScript', ColorButton)
 
 	local tweenservice = game:GetService("TweenService")
@@ -1779,8 +1828,8 @@ local function CFMZSQC_fake_script() -- ColorButton.LocalScript
 	end)
 	
 end
-coroutine.wrap(CFMZSQC_fake_script)()
-local function RFGLDA_fake_script() -- ImageLabel.LocalScript 
+coroutine.wrap(TBYA_fake_script)()
+local function OSDE_fake_script() -- ImageLabel.LocalScript 
 	local script = Instance.new('LocalScript', ImageLabel)
 
 	local TweenService = game:GetService("TweenService")
@@ -1789,6 +1838,7 @@ local function RFGLDA_fake_script() -- ImageLabel.LocalScript
 	local otherstuff = script.Parent.Parent.ScrollMenu
 	local commandbox = script.Parent.Parent.CommandBox
 	local color = script.Parent.Parent.ColorButton
+	
 	
 	
 	task.wait(3)
@@ -1807,11 +1857,12 @@ local function RFGLDA_fake_script() -- ImageLabel.LocalScript
 	        otherstuff.Visible = true
 	        commandbox.Visible = true
 	        color.Visible = true
+	
 	end)
 	
 end
-coroutine.wrap(RFGLDA_fake_script)()
-local function LPOQR_fake_script() -- Colors.Dragify 
+coroutine.wrap(OSDE_fake_script)()
+local function JFRPRB_fake_script() -- Colors.Dragify 
 	local script = Instance.new('LocalScript', Colors)
 
 	local UIS = game:GetService("UserInputService")
@@ -1855,8 +1906,8 @@ local function LPOQR_fake_script() -- Colors.Dragify
 	dragify(script.Parent)
 	
 end
-coroutine.wrap(LPOQR_fake_script)()
-local function HKFWMCI_fake_script() -- Red.LocalScript 
+coroutine.wrap(JFRPRB_fake_script)()
+local function GFVWVI_fake_script() -- Red.LocalScript 
 	local script = Instance.new('LocalScript', Red)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1873,8 +1924,8 @@ local function HKFWMCI_fake_script() -- Red.LocalScript
 	end)
 	
 end
-coroutine.wrap(HKFWMCI_fake_script)()
-local function HJFRI_fake_script() -- Purple.LocalScript 
+coroutine.wrap(GFVWVI_fake_script)()
+local function ZVXR_fake_script() -- Purple.LocalScript 
 	local script = Instance.new('LocalScript', Purple)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1891,8 +1942,8 @@ local function HJFRI_fake_script() -- Purple.LocalScript
 	end)
 	
 end
-coroutine.wrap(HJFRI_fake_script)()
-local function PZUQM_fake_script() -- Classic.LocalScript 
+coroutine.wrap(ZVXR_fake_script)()
+local function EBJLR_fake_script() -- Classic.LocalScript 
 	local script = Instance.new('LocalScript', Classic)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1909,8 +1960,8 @@ local function PZUQM_fake_script() -- Classic.LocalScript
 	end)
 	
 end
-coroutine.wrap(PZUQM_fake_script)()
-local function BLLBG_fake_script() -- Yellow.LocalScript 
+coroutine.wrap(EBJLR_fake_script)()
+local function EDCWT_fake_script() -- Yellow.LocalScript 
 	local script = Instance.new('LocalScript', Yellow)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1927,8 +1978,8 @@ local function BLLBG_fake_script() -- Yellow.LocalScript
 	end)
 	
 end
-coroutine.wrap(BLLBG_fake_script)()
-local function LMAHSL_fake_script() -- Cyan.LocalScript 
+coroutine.wrap(EDCWT_fake_script)()
+local function GVXNTY_fake_script() -- Cyan.LocalScript 
 	local script = Instance.new('LocalScript', Cyan)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1945,8 +1996,8 @@ local function LMAHSL_fake_script() -- Cyan.LocalScript
 	end)
 	
 end
-coroutine.wrap(LMAHSL_fake_script)()
-local function JDCSRM_fake_script() -- Green.LocalScript 
+coroutine.wrap(GVXNTY_fake_script)()
+local function SRCDP_fake_script() -- Green.LocalScript 
 	local script = Instance.new('LocalScript', Green)
 
 	local main = script.Parent.Parent.Parent.Main
@@ -1963,8 +2014,8 @@ local function JDCSRM_fake_script() -- Green.LocalScript
 	end)
 	
 end
-coroutine.wrap(JDCSRM_fake_script)()
-local function AJKJS_fake_script() -- RGBColourPicker.LocalScript 
+coroutine.wrap(SRCDP_fake_script)()
+local function IDJRHOF_fake_script() -- RGBColourPicker.LocalScript 
 	local script = Instance.new('LocalScript', RGBColourPicker)
 
 	local Players = game:GetService("Players")
@@ -2016,4 +2067,4 @@ local function AJKJS_fake_script() -- RGBColourPicker.LocalScript
 	end)
 	
 end
-coroutine.wrap(AJKJS_fake_script)()
+coroutine.wrap(IDJRHOF_fake_script)()
